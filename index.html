@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="top">
+  <div class="container">
+    <div class="name">
+      <a href="https://telios.dev">
+        <h1>Telios I</h1>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="post-list">
+    {% for post in paginator.posts %}
+    <div class="post short">
+      <a href="{{ post.url }}">
+        <h2 class="post-title">{{ post.title }}</h2>
+      </a>
+      {% assign short_content = post.content | strip_html | truncatewords: 60 %}
+      <p class="post-description">{{ post.description | markdown | default: short_content }}</p>
+      <small class="post-info">{{ post.date | date: "%B %d, %Y" }} &middot; {{ post.content | number_of_words: "auto"
+        }} words</small>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      &laquo;
+    </a>
+    {% else %}
+    {% endif %}
+    <span class="page_number ">
+      {{ paginator.page }} / {{ paginator.total_pages }}
+    </span>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">&raquo;</a>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

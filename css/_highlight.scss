@@ -1,0 +1,21 @@
+.highlight {
+  .k, .kc, .kn, .kd, .kp, .kr, .kt, .nc, .no, .nn, .nb {
+    font-weight: bold;
+  }
+
+  .c, .cm, .cp, .c1, .cs {
+    font-style: italic;
+  }
+
+  .o, .ow {
+    font-weight: bold;
+  }
+
+  .l, .ld, .m, .mf, .mh, .mi, .mo, .il, .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss {
+    color: $main-color;
+  }
+
+  .err {
+    color: #f64848;
+  }
+}
