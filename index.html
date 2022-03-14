@@ -21,8 +21,8 @@ layout: default
       </a>
       {% assign short_content = post.content | strip_html | truncatewords: 60 %}
       <p class="post-description">{{ post.description | markdown | default: short_content }}</p>
-      <small class="post-info">{{ post.date | date: "%B %d, %Y" }} &middot; {{ post.content | number_of_words: "auto"
-        }} words</small>
+      <small class="post-info">{{ post.date | date: "%B %d, %Y" }} &middot; {{ post.content | number_of_words }}
+        words</small>
     </div>
     {% endfor %}
   </div>

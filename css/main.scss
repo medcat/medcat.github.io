@@ -6,7 +6,7 @@ $black-color: rgb(17, 18, 29);
 $main-color: rgb(72, 246, 164);
 $white-color: invert($black-color); // 238, 237, 226
 
-@import "css/_highlight.scss";
+@import "_highlight.scss";
 
 *,
 *::before,
@@ -98,6 +98,8 @@ html, body {
     // margin-bottom: 1.5rem;
     padding: 0;
     margin: 0;
+    text-shadow: 2px 0 0 $black-color;
+    color: $white-color;
   }
 
   small {
