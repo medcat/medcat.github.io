@@ -2,6 +2,7 @@
 layout: default
 ---
 
+{% comment %}
 <div class="top post">
     <div class="container">
         <div class="right">
@@ -15,8 +16,20 @@ layout: default
     </div>
 </div>
 
+{% endcomment %}
+
 <div class="container">
+    <div class="top-name">
+        <a href="https://blog.telios.dev">
+            <h1>Telios I</h1>
+        </a>
+    </div>
     <section class="post">
+        <div class="name">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <small class="post-info">{{ page.date | date: "%B %d, %Y" }} :: {{ content | number_of_words }}
+                words</small>
+        </div>
         {{ content }}
     </section>
 </div>
