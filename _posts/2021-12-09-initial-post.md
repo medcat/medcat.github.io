@@ -2,6 +2,7 @@
 layout: post
 title:  "Initial Post"
 date:   2021-12-09 23:26:26 +0000
+graph_type: article
 categories:
 description: >
   This is the initial post on my blog.  It's nothing special, but I'd like to take

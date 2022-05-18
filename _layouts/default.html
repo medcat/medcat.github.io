@@ -15,6 +15,20 @@
 
     <title>{% if page.title %}{{ page.title }} :: Telios I{% else %}Telios I{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#47f5a4" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} :: Telios I{% else %}Telios I{% endif %}" />
+    <meta property="og:type" content="{% if page.graph_type %}{{ page.graph_type }}{% else %}website{% endif %}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    {% if page.graph_image %}
+    <meta property="og:image" content="{{ page.graph_image | absolute_url }}" />
+    {% endif %}
+    {% if page.description %}
+    <meta property="og:description" content="{{ page.description }}" />
+    {% endif %}
+    {% for graph in page.graphs %}
+    <meta property="{{ graph[0] }}" content="{{ graph[1] }}" />
+    {% endfor %}
+    <meta property="twitter:card" content="{% if page.graph_image %}summary_large_image{% else %}summary{% endif %}" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="/assets/icon.png">
 </head>

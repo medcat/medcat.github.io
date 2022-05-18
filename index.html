@@ -29,7 +29,7 @@ layout: default
       <small class="post-info">{{ post.date | date: "%B %d, %Y" }} :: {{ post.content | number_of_words }}
         words</small>
       {% assign short_content = post.content | strip_html | truncatewords: 60 %}
-      <p class="post-description">{{ post.description | markdown | default: e }}</p>
+      <p class="post-description">{{ post.description | markdown | default: short_content }}</p>
       <p><a href="{{ post.url }}" class="rm">Read More &#8594;</a></p>
     </div>
     {% endfor %}
