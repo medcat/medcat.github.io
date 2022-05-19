@@ -31,6 +31,19 @@
     <meta property="twitter:card" content="{% if page.graph_image %}summary_large_image{% else %}summary{% endif %}" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="/assets/icon.png">
+    <script>
+        console.log('preload');
+        window.addEventListener('load', function () {
+            console.log('load');
+            var s = document.getElementsByClassName('spoiler');
+            for (var i = 0; i < s.length; i++) {
+                s[i].addEventListener('click', function () {
+                    console.log(this);
+                    this.classList.toggle('discard');
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>

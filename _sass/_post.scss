@@ -402,8 +402,8 @@ body {
         transition: background-color 0.25s, opacity 0.25s;
       }
 
-      &>*:not(:hover),
-      &:not(:hover) {
+      &:not(:hover):not(.discard)>*,
+      &:not(:hover):not(.discard) {
         background-color: currentColor;
       }
 
